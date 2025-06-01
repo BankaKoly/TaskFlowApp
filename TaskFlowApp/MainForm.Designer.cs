@@ -18,6 +18,7 @@
         private System.Windows.Forms.ComboBox cmbSort;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnDelete; // ДОДАНО КНОПКУ ВИДАЛИТИ
         private System.Windows.Forms.DataGridView dataGridTasks;
 
         protected override void Dispose(bool disposing)
@@ -44,6 +45,7 @@
             panelFilter = new Panel();
             btnCancel = new Button();
             btnSave = new Button();
+            btnDelete = new Button(); // ДОДАНО
             cmbSort = new ComboBox();
             cmbStatus = new ComboBox();
             dataGridTasks = new DataGridView();
@@ -164,6 +166,7 @@
 
             // panelFilter
             panelFilter.BackColor = Color.White;
+            panelFilter.Controls.Add(btnDelete); // ДОДАНО КНОПКУ ВИДАЛИТИ
             panelFilter.Controls.Add(btnCancel);
             panelFilter.Controls.Add(btnSave);
             panelFilter.Controls.Add(cmbSort);
@@ -176,8 +179,23 @@
             panelFilter.Size = new Size(1167, 69);
             panelFilter.TabIndex = 2;
 
-            // btnCancel - ЗМІНЕНО НА "Вивантаження"
-            btnCancel.BackColor = Color.FromArgb(34, 197, 94); // Змінено колір на зелений
+            // btnDelete - НОВА КНОПКА "ВИДАЛИТИ"
+            btnDelete.BackColor = Color.FromArgb(239, 68, 68); // Червоний колір
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(677, 14);
+            btnDelete.Margin = new Padding(4, 3, 4, 3);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(117, 35);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Видалити";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+
+            // btnCancel - "Вивантаження"
+            btnCancel.BackColor = Color.FromArgb(34, 197, 94);
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -187,12 +205,12 @@
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(117, 35);
             btnCancel.TabIndex = 3;
-            btnCancel.Text = "Вивантаження"; // ЗМІНЕНО ТЕКСТ
+            btnCancel.Text = "Вивантаження";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
 
             // btnSave
-            btnSave.BackColor = Color.FromArgb(59, 130, 246); // Змінено колір на синій
+            btnSave.BackColor = Color.FromArgb(59, 130, 246);
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
