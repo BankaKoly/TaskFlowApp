@@ -8,6 +8,7 @@
         private System.Windows.Forms.ToolStripMenuItem сьогодніToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem завершеноToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem тегиToolStripMenuItem;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Button btnNewTask;
         private System.Windows.Forms.TextBox txtSearch;
@@ -33,6 +34,7 @@
             menuStrip1 = new MenuStrip();
             усіЗавданняToolStripMenuItem = new ToolStripMenuItem();
             сьогодніToolStripMenuItem = new ToolStripMenuItem();
+            тегиToolStripMenuItem = new ToolStripMenuItem();
             завершеноToolStripMenuItem = new ToolStripMenuItem();
             налаштуванняToolStripMenuItem = new ToolStripMenuItem();
             panelTop = new Panel();
@@ -45,62 +47,70 @@
             cmbSort = new ComboBox();
             cmbStatus = new ComboBox();
             dataGridTasks = new DataGridView();
-            тегиToolStripMenuItem = new ToolStripMenuItem();
+
             menuStrip1.SuspendLayout();
             panelTop.SuspendLayout();
             panelFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridTasks).BeginInit();
             SuspendLayout();
-            // 
+
             // menuStrip1
-            // 
             menuStrip1.BackColor = Color.FromArgb(240, 244, 248);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { усіЗавданняToolStripMenuItem, сьогодніToolStripMenuItem, тегиToolStripMenuItem, завершеноToolStripMenuItem, налаштуванняToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] {
+                усіЗавданняToolStripMenuItem,
+                сьогодніToolStripMenuItem,
+                тегиToolStripMenuItem,
+                завершеноToolStripMenuItem,
+                налаштуванняToolStripMenuItem
+            });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
             menuStrip1.Size = new Size(1167, 27);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            // 
+
             // усіЗавданняToolStripMenuItem
-            // 
             усіЗавданняToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             усіЗавданняToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
             усіЗавданняToolStripMenuItem.Name = "усіЗавданняToolStripMenuItem";
             усіЗавданняToolStripMenuItem.Size = new Size(100, 23);
             усіЗавданняToolStripMenuItem.Text = "Усі завдання";
             усіЗавданняToolStripMenuItem.Click += усіЗавданняToolStripMenuItem_Click;
-            // 
+
             // сьогодніToolStripMenuItem
-            // 
             сьогодніToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             сьогодніToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
             сьогодніToolStripMenuItem.Name = "сьогодніToolStripMenuItem";
             сьогодніToolStripMenuItem.Size = new Size(77, 23);
             сьогодніToolStripMenuItem.Text = "Сьогодні";
             сьогодніToolStripMenuItem.Click += сьогодніToolStripMenuItem_Click;
-            // 
+
+            // тегиToolStripMenuItem
+            тегиToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            тегиToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
+            тегиToolStripMenuItem.Name = "тегиToolStripMenuItem";
+            тегиToolStripMenuItem.Size = new Size(48, 23);
+            тегиToolStripMenuItem.Text = "Теги";
+            тегиToolStripMenuItem.Click += тегиToolStripMenuItem_Click;
+
             // завершеноToolStripMenuItem
-            // 
             завершеноToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             завершеноToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
             завершеноToolStripMenuItem.Name = "завершеноToolStripMenuItem";
             завершеноToolStripMenuItem.Size = new Size(92, 23);
             завершеноToolStripMenuItem.Text = "Завершено";
             завершеноToolStripMenuItem.Click += завершеноToolStripMenuItem_Click;
-            // 
+
             // налаштуванняToolStripMenuItem
-            // 
             налаштуванняToolStripMenuItem.Font = new Font("Segoe UI", 10F);
             налаштуванняToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
             налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
             налаштуванняToolStripMenuItem.Size = new Size(113, 23);
             налаштуванняToolStripMenuItem.Text = "Налаштування";
             налаштуванняToolStripMenuItem.Click += налаштуванняToolStripMenuItem_Click;
-            // 
+
             // panelTop
-            // 
             panelTop.BackColor = Color.White;
             panelTop.Controls.Add(btnNewTask);
             panelTop.Controls.Add(txtSearch);
@@ -112,9 +122,8 @@
             panelTop.Padding = new Padding(23, 23, 23, 23);
             panelTop.Size = new Size(1167, 92);
             panelTop.TabIndex = 1;
-            // 
+
             // btnNewTask
-            // 
             btnNewTask.BackColor = Color.FromArgb(59, 130, 246);
             btnNewTask.FlatAppearance.BorderSize = 0;
             btnNewTask.FlatStyle = FlatStyle.Flat;
@@ -128,9 +137,8 @@
             btnNewTask.Text = "Нова задача";
             btnNewTask.UseVisualStyleBackColor = false;
             btnNewTask.Click += btnNewTask_Click;
-            // 
+
             // txtSearch
-            // 
             txtSearch.Font = new Font("Segoe UI", 12F);
             txtSearch.ForeColor = Color.Gray;
             txtSearch.Location = new Point(467, 29);
@@ -142,9 +150,8 @@
             txtSearch.TextChanged += txtSearch_TextChanged;
             txtSearch.Enter += txtSearch_Enter;
             txtSearch.Leave += txtSearch_Leave;
-            // 
+
             // lblTitle
-            // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(15, 23, 42);
@@ -154,9 +161,8 @@
             lblTitle.Size = new Size(186, 37);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Усі завдання";
-            // 
+
             // panelFilter
-            // 
             panelFilter.BackColor = Color.White;
             panelFilter.Controls.Add(btnCancel);
             panelFilter.Controls.Add(btnSave);
@@ -169,26 +175,24 @@
             panelFilter.Padding = new Padding(23, 23, 23, 23);
             panelFilter.Size = new Size(1167, 69);
             panelFilter.TabIndex = 2;
-            // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = Color.FromArgb(156, 163, 175);
+
+            // btnCancel - ЗМІНЕНО НА "Вивантаження"
+            btnCancel.BackColor = Color.FromArgb(34, 197, 94); // Змінено колір на зелений
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Segoe UI", 10F);
+            btnCancel.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnCancel.ForeColor = Color.White;
             btnCancel.Location = new Point(957, 14);
             btnCancel.Margin = new Padding(4, 3, 4, 3);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(117, 35);
             btnCancel.TabIndex = 3;
-            btnCancel.Text = "Скасувати";
+            btnCancel.Text = "Вивантаження"; // ЗМІНЕНО ТЕКСТ
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
-            // 
+
             // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(34, 197, 94);
+            btnSave.BackColor = Color.FromArgb(59, 130, 246); // Змінено колір на синій
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -201,22 +205,24 @@
             btnSave.Text = "Зберегти";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            // 
+
             // cmbSort
-            // 
             cmbSort.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSort.Font = new Font("Segoe UI", 10F);
             cmbSort.FormattingEnabled = true;
-            cmbSort.Items.AddRange(new object[] { "Сортувати за датою", "Сортувати за назвою", "Сортувати за статусом" });
+            cmbSort.Items.AddRange(new object[] {
+                "Сортувати за датою",
+                "Сортувати за назвою",
+                "Сортувати за статусом"
+            });
             cmbSort.Location = new Point(233, 17);
             cmbSort.Margin = new Padding(4, 3, 4, 3);
             cmbSort.Name = "cmbSort";
             cmbSort.Size = new Size(209, 25);
             cmbSort.TabIndex = 1;
             cmbSort.SelectedIndexChanged += cmbSort_SelectedIndexChanged;
-            // 
+
             // cmbStatus
-            // 
             cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbStatus.Font = new Font("Segoe UI", 10F);
             cmbStatus.FormattingEnabled = true;
@@ -227,9 +233,8 @@
             cmbStatus.Size = new Size(174, 25);
             cmbStatus.TabIndex = 0;
             cmbStatus.SelectedIndexChanged += cmbStatus_SelectedIndexChanged;
-            // 
+
             // dataGridTasks
-            // 
             dataGridTasks.AllowUserToAddRows = false;
             dataGridTasks.BackgroundColor = Color.White;
             dataGridTasks.BorderStyle = BorderStyle.None;
@@ -242,18 +247,8 @@
             dataGridTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridTasks.Size = new Size(1167, 562);
             dataGridTasks.TabIndex = 3;
-            // 
-            // тегиToolStripMenuItem
-            // 
-            тегиToolStripMenuItem.Font = new Font("Segoe UI", 10F);
-            тегиToolStripMenuItem.ForeColor = Color.FromArgb(51, 65, 85);
-            тегиToolStripMenuItem.Name = "тегиToolStripMenuItem";
-            тегиToolStripMenuItem.Size = new Size(48, 23);
-            тегиToolStripMenuItem.Text = "Теги";
-            тегиToolStripMenuItem.Click += тегиToolStripMenuItem_Click;
-            // 
+
             // MainForm
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 250, 251);
@@ -268,6 +263,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TaskFlow";
             Load += MainForm_Load;
+
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panelTop.ResumeLayout(false);
@@ -275,8 +271,8 @@
             panelFilter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridTasks).EndInit();
             ResumeLayout(false);
+            ResumeLayout(false);
             PerformLayout();
         }
-        private ToolStripMenuItem тегиToolStripMenuItem;
     }
 }
