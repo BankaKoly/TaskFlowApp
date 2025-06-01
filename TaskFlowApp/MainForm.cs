@@ -197,7 +197,7 @@ namespace TaskFlowApp
             }
 
             var selectedTask = (Task)dataGridTasks.SelectedRows[0].DataBoundItem;
-
+            
             DialogResult result = MessageBox.Show(
                 $"Ви впевнені, що хочете видалити завдання \"{selectedTask.Name}\"?",
                 "Підтвердження видалення",
@@ -210,10 +210,10 @@ namespace TaskFlowApp
                 {
                     // Видаляємо з основного списку
                     tasks.Remove(selectedTask);
-
+                    
                     // Оновлюємо відображення
                     FilterTasks();
-
+                    
                     MessageBox.Show("Завдання видалено успішно!",
                         "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
